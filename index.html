@@ -104,9 +104,6 @@ section { margin-top: var(--s-16); }
 .habit.done .habit-check { background: var(--ink); border-color: var(--ink); }
 .habit.done .habit-check svg { stroke: var(--paper); }
 .habit-spacer { width: 22px; flex-shrink: 0; }
-.habit-bullet { width: 22px; height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
-.habit-bullet::before { content: ''; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--mid); background: transparent; transition: all 0.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
-.habit.hit .habit-bullet::before { background: var(--accent); border-color: var(--accent); width: 10px; height: 10px; }
 .habit-body { flex: 1; min-width: 0; }
 .habit-label { font-family: var(--serif); font-size: 1.1rem; transition: color 0.2s ease; }
 .habit.done .habit-label { text-decoration: line-through; text-decoration-color: var(--mid); text-decoration-thickness: 1px; color: var(--mid); }
@@ -125,19 +122,6 @@ section { margin-top: var(--s-16); }
 .counter-btn:active { transform: scale(0.92); }
 .counter-value { font-family: var(--serif); font-weight: 500; font-size: 1.65rem; width: 32px; text-align: center; font-variant-numeric: tabular-nums; color: var(--mid); font-variation-settings: "opsz" 72; transition: color 0.2s ease; }
 .counter-value.hit { color: var(--accent); font-weight: 500; }
-
-/* ──── Meal Times (under Meals habit) ──── */
-.meal-times { margin-top: var(--s-3); padding-top: var(--s-3); border-top: 1px dotted var(--soft); }
-.meal-times-label { font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--mid); margin-bottom: var(--s-2); }
-.meal-times-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--s-2); }
-.meal-time-slot { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: var(--s-2) 4px; border: 1px dashed var(--soft); border-radius: 2px; cursor: pointer; transition: border-color 0.2s ease, background 0.2s ease; }
-.meal-time-slot:hover { border-color: var(--mid); }
-.meal-time-slot.filled { border-style: solid; border-color: var(--accent); background: rgba(180, 83, 9, 0.04); }
-.meal-time-num { font-family: var(--mono); font-size: 0.6rem; color: var(--mid); letter-spacing: 0.15em; }
-.meal-time-slot.filled .meal-time-num { color: var(--accent); }
-.meal-time-input { width: 100%; background: transparent; border: none; font-family: var(--serif); font-size: 0.78rem; color: var(--ink); text-align: center; outline: none; padding: 0; cursor: pointer; }
-.meal-time-input::-webkit-calendar-picker-indicator { opacity: 0.4; cursor: pointer; padding: 0; margin-left: 0; }
-.meal-time-input:focus { color: var(--accent); }
 
 .entry-nav { display: flex; justify-content: space-between; align-items: center; margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px solid var(--soft); }
 .entry-nav button { background: none; border: none; font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--mid); cursor: pointer; transition: color 0.15s ease; padding: var(--s-2); }
@@ -216,28 +200,6 @@ section { margin-top: var(--s-16); }
 .note-date { font-family: var(--mono); font-size: 0.7rem; color: var(--mid); text-transform: uppercase; letter-spacing: 0.15em; padding-top: 3px; }
 .note-text { font-family: var(--serif); font-size: 1.05rem; line-height: 1.55; color: var(--ink); }
 .note-habit { font-family: var(--mono); font-size: 0.6rem; color: var(--mid-light); text-transform: uppercase; letter-spacing: 0.18em; margin-top: 4px; }
-
-/* ──── Hours of the Day ──── */
-.hourly-card { background: var(--paper); border: 1px solid var(--soft); border-radius: 2px; padding: var(--s-2) var(--s-4); }
-.hourly-list { display: flex; flex-direction: column; }
-.hour-block { border-bottom: 1px solid var(--soft); }
-.hour-block:last-child { border-bottom: none; }
-.hour-block-header { width: 100%; background: transparent; border: none; padding: var(--s-4) var(--s-2); display: grid; grid-template-columns: auto auto 1fr auto; align-items: baseline; gap: var(--s-3); cursor: pointer; text-align: left; font-family: inherit; transition: padding-left 0.15s ease; }
-.hour-block-header:hover { padding-left: var(--s-3); }
-.hour-block-title { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
-.hour-block-range { font-family: var(--mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--mid); }
-.hour-block-count { font-family: var(--mono); font-size: 0.7rem; color: var(--mid); justify-self: end; font-variant-numeric: tabular-nums; letter-spacing: 0.1em; }
-.hour-block-count.has-fills { color: var(--accent); }
-.hour-block-chev { font-family: var(--serif); font-size: 1.3rem; color: var(--mid); width: 18px; text-align: center; line-height: 1; }
-.hour-block.open .hour-block-chev { color: var(--ink); }
-.hour-block-body { padding: 0 var(--s-2) var(--s-3); }
-.hour-row { display: grid; grid-template-columns: 70px 1fr; gap: var(--s-4); align-items: center; padding: var(--s-2) 0; border-bottom: 1px solid var(--soft-rule); }
-.hour-row:last-child { border-bottom: none; }
-.hour-label { font-family: var(--mono); font-size: 0.7rem; color: var(--mid); text-transform: uppercase; letter-spacing: 0.15em; font-variant-numeric: tabular-nums; }
-.hour-row.filled .hour-label { color: var(--ink); }
-.hour-input { width: 100%; background: transparent; border: none; padding: var(--s-2) 0; font-family: var(--serif); font-size: 0.98rem; color: var(--ink); outline: none; line-height: 1.5; }
-.hour-input::placeholder { color: var(--mid-light); font-style: italic; }
-.hour-input:focus { color: var(--ink); }
 
 /* ──── Empty state ──── */
 .empty { text-align: center; padding: var(--s-12) var(--s-4); color: var(--mid); font-family: var(--serif); font-style: italic; font-size: 0.95rem; }
@@ -354,15 +316,6 @@ section { margin-top: var(--s-16); }
   .welcome-title { font-size: 2.25rem; }
   .habit-config-row { grid-template-columns: 1fr auto; }
   .habit-config-handle { display: none; }
-  .hourly-card { padding: var(--s-2) var(--s-3); }
-  .hour-block-header { grid-template-columns: auto 1fr auto; gap: var(--s-2); padding: var(--s-3) var(--s-1); }
-  .hour-block-range { display: none; }
-  .hour-row { grid-template-columns: 56px 1fr; gap: var(--s-3); }
-  .hour-label { font-size: 0.65rem; }
-  .hour-input { font-size: 0.95rem; }
-  .meal-times-grid { gap: 4px; }
-  .meal-time-slot { padding: 6px 2px; }
-  .meal-time-input { font-size: 0.7rem; }
 }
 @media (max-width: 400px) { .masthead-meta { display: none; } }
 </style>
@@ -444,16 +397,6 @@ section { margin-top: var(--s-16); }
         <button id="today-btn">return to today</button>
         <button id="next-day">next day →</button>
       </div>
-    </div>
-  </section>
-
-  <section id="hourly-section">
-    <div class="section-head">
-      <h2 class="section-title">Hours of the Day</h2>
-      <span class="section-meta" id="hourly-meta">how it actually went</span>
-    </div>
-    <div class="hourly-card">
-      <div class="hourly-list" id="hourly-list"></div>
     </div>
   </section>
 
@@ -854,10 +797,9 @@ function renderEntry() {
 
     } else if (h.type === 'select') {
       row.classList.add('no-click');
-      if (isHit(day, h)) row.classList.add('hit');
       const opts = h.options || [];
       row.innerHTML = `
-        <div class="habit-bullet"></div>
+        <div class="habit-spacer"></div>
         <div class="habit-body"><div class="habit-label">${escapeHtml(h.label)}</div></div>
         <div class="habit-pills">
           ${opts.map((o, i) =>
@@ -877,33 +819,11 @@ function renderEntry() {
       const value = v || 0;
       const hit = value >= (h.target || 1);
       row.classList.add('no-click');
-      if (hit) row.classList.add('hit');
-
-      // Special case: Meals 5+ habit also shows 5 meal-time inputs underneath
-      const isMeals = h.short === 'Meals 5+';
-      const mealTimesHtml = isMeals ? `
-        <div class="meal-times" data-habit-id="${h.id}">
-          <div class="meal-times-label">timing</div>
-          <div class="meal-times-grid">
-            ${[1,2,3,4,5].map(n => {
-              const t = (day.mealTimes && day.mealTimes[n]) || '';
-              return `
-                <label class="meal-time-slot ${t ? 'filled' : ''}">
-                  <span class="meal-time-num">${n}</span>
-                  <input type="time" class="meal-time-input" data-meal="${n}" value="${escapeHtml(t)}" />
-                </label>
-              `;
-            }).join('')}
-          </div>
-        </div>
-      ` : '';
-
       row.innerHTML = `
-        <div class="habit-bullet"></div>
+        <div class="habit-spacer"></div>
         <div class="habit-body">
           <div class="habit-label">${escapeHtml(h.label)}</div>
           <div class="habit-sub">target ${h.target || 1}</div>
-          ${mealTimesHtml}
         </div>
         <div class="counter">
           <button class="counter-btn" data-d="-1">−</button>
@@ -920,30 +840,6 @@ function renderEntry() {
           renderAll();
         });
       });
-
-      // Wire up meal-time inputs (debounced, no full re-render to keep focus)
-      if (isMeals) {
-        let mealTimer;
-        row.querySelectorAll('.meal-time-input').forEach(input => {
-          input.addEventListener('click', e => e.stopPropagation());
-          input.addEventListener('input', (e) => {
-            e.stopPropagation();
-            const meal = e.target.dataset.meal;
-            const d = state.days[state.currentDate] || defaultDay(state.currentDate);
-            if (!d.mealTimes) d.mealTimes = {};
-            d.mealTimes[meal] = e.target.value;
-            state.days[state.currentDate] = d;
-            const slot = e.target.closest('.meal-time-slot');
-            if (slot) slot.classList.toggle('filled', !!e.target.value);
-            clearTimeout(mealTimer);
-            mealTimer = setTimeout(save, 400);
-          });
-          input.addEventListener('blur', () => {
-            clearTimeout(mealTimer);
-            save();
-          });
-        });
-      }
     }
 
     habitsEl.appendChild(row);
@@ -1178,134 +1074,6 @@ function renderNotes() {
   }).join('');
 }
 
-// Track which hourly block is currently expanded (session-only)
-let openHourlyBlock = null;
-
-function renderHourly() {
-  const list = document.getElementById('hourly-list');
-  const meta = document.getElementById('hourly-meta');
-  if (!list) return;
-
-  const day = getDay(state.currentDate);
-  const hourly = day.hourly || {};
-
-  const fmtHour = (h) => {
-    if (h === 0) return '12 AM';
-    if (h < 12) return `${h} AM`;
-    if (h === 12) return '12 PM';
-    return `${h - 12} PM`;
-  };
-
-  // Four blocks: Morning (7–10), Midday (11–2), Afternoon (3–6), Evening (7–11pm)
-  const BLOCKS = [
-    { id: 'morning',   label: 'Morning',   range: '7 — 10 AM',   hours: [7, 8, 9, 10] },
-    { id: 'midday',    label: 'Midday',    range: '11 AM — 2 PM', hours: [11, 12, 13, 14] },
-    { id: 'afternoon', label: 'Afternoon', range: '3 — 6 PM',    hours: [15, 16, 17, 18] },
-    { id: 'evening',   label: 'Evening',   range: '7 — 11 PM',   hours: [19, 20, 21, 22, 23] }
-  ];
-
-  const isFilled = (h) => ((hourly[String(h).padStart(2, '0')] || '').trim().length > 0);
-
-  list.innerHTML = BLOCKS.map(block => {
-    const filledIn = block.hours.filter(isFilled).length;
-    const total = block.hours.length;
-    const isOpen = openHourlyBlock === block.id;
-    const headerHasFills = filledIn > 0;
-
-    const rowsHtml = block.hours.map(h => {
-      const hh = String(h).padStart(2, '0');
-      const val = hourly[hh] || '';
-      const filled = val.trim().length > 0;
-      return `
-        <div class="hour-row ${filled ? 'filled' : ''}" data-hour="${hh}">
-          <div class="hour-label">${fmtHour(h)}</div>
-          <input type="text" class="hour-input" data-hour="${hh}" placeholder="…" value="${escapeHtml(val)}" />
-        </div>
-      `;
-    }).join('');
-
-    return `
-      <div class="hour-block ${isOpen ? 'open' : ''}" data-block="${block.id}">
-        <button class="hour-block-header" data-block-toggle="${block.id}" aria-expanded="${isOpen}">
-          <span class="hour-block-title">${block.label}</span>
-          <span class="hour-block-range">${block.range}</span>
-          <span class="hour-block-count ${headerHasFills ? 'has-fills' : ''}">${filledIn}/${total}</span>
-          <span class="hour-block-chev" aria-hidden="true">${isOpen ? '−' : '+'}</span>
-        </button>
-        <div class="hour-block-body" ${isOpen ? '' : 'hidden'}>
-          ${rowsHtml}
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  // Update meta line
-  const allHours = BLOCKS.flatMap(b => b.hours);
-  const filledCount = allHours.filter(isFilled).length;
-  if (meta) {
-    meta.textContent = filledCount === 0
-      ? 'how it actually went'
-      : `${filledCount} ${filledCount === 1 ? 'hour' : 'hours'} logged`;
-  }
-
-  // Block toggle: only one open at a time
-  list.querySelectorAll('[data-block-toggle]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = btn.dataset.blockToggle;
-      openHourlyBlock = (openHourlyBlock === id) ? null : id;
-      renderHourly();
-    });
-  });
-
-  // Wire up inputs — debounced save, no full re-render to keep focus
-  let timer;
-  list.querySelectorAll('.hour-input').forEach(input => {
-    input.addEventListener('input', (e) => {
-      const hh = e.target.dataset.hour;
-      const d = state.days[state.currentDate] || defaultDay(state.currentDate);
-      if (!d.hourly) d.hourly = {};
-      d.hourly[hh] = e.target.value;
-      state.days[state.currentDate] = d;
-      // toggle filled class on the row without re-render
-      const row = e.target.closest('.hour-row');
-      if (row) row.classList.toggle('filled', e.target.value.trim().length > 0);
-      // update the parent block's counter live
-      const blockEl = e.target.closest('.hour-block');
-      if (blockEl) {
-        const blockId = blockEl.dataset.block;
-        const block = BLOCKS.find(b => b.id === blockId);
-        if (block) {
-          const fc = block.hours.filter(h => {
-            const hkey = String(h).padStart(2, '0');
-            return ((d.hourly[hkey] || '').trim().length > 0);
-          }).length;
-          const countEl = blockEl.querySelector('.hour-block-count');
-          if (countEl) {
-            countEl.textContent = `${fc}/${block.hours.length}`;
-            countEl.classList.toggle('has-fills', fc > 0);
-          }
-        }
-      }
-      clearTimeout(timer);
-      timer = setTimeout(save, 400);
-    });
-    input.addEventListener('blur', () => {
-      clearTimeout(timer);
-      save();
-      // refresh meta count on blur
-      const d = getDay(state.currentDate);
-      const hourly = d.hourly || {};
-      const fc = allHours.filter(h => ((hourly[String(h).padStart(2,'0')] || '').trim().length > 0)).length;
-      if (meta) {
-        meta.textContent = fc === 0
-          ? 'how it actually went'
-          : `${fc} ${fc === 1 ? 'hour' : 'hours'} logged`;
-      }
-    });
-  });
-}
-
 function renderAux() {
   renderMastheadStats();
   renderStats();
@@ -1318,7 +1086,6 @@ function renderAll() {
   renderMastheadIdentity();
   renderMastheadStats();
   renderEntry();
-  renderHourly();
   renderStats();
   renderHeatmap();
   renderConsistency();
